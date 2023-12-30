@@ -1,4 +1,5 @@
 import 'package:booktickets/screens/bottom_bar.dart';
+import 'package:booktickets/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, // remove debug banner
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        /*colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),*/
+        primaryColor: primary,
         useMaterial3: true,
       ),
       home: const BottomBar(),
