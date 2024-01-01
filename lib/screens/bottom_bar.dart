@@ -1,3 +1,4 @@
+import 'package:booktickets/screens/app_state_screen.dart';
 import 'package:booktickets/screens/home_screen.dart';
 import 'package:booktickets/screens/profile_screen.dart';
 import 'package:booktickets/screens/search_screen.dart';
@@ -15,6 +16,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
+    AppStateScreen(),
     const HomeScreen(),
     const SearchScreen(),
     const TicketScreen(),
@@ -47,6 +49,10 @@ class _BottomBarState extends State<BottomBar> {
         unselectedItemColor: const Color(0xFF526480),
         type: BottomNavigationBarType.fixed, // no moving(default: shifting)
         items: const [
+          BottomNavigationBarItem(
+              icon: Icon(FluentSystemIcons.ic_fluent_add_circle_filled),
+              activeIcon: Icon(FluentSystemIcons.ic_fluent_add_circle_filled),
+              label: "Add"),
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),

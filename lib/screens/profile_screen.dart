@@ -1,3 +1,4 @@
+import 'package:booktickets/app_states/app_controller.dart';
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:booktickets/widgets/column_layout.dart';
@@ -5,10 +6,11 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
 import '../widgets/layout_builder_widget.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends GetView<AppController> {
   const ProfileScreen({super.key});
 
   @override
@@ -261,6 +263,9 @@ class ProfileScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500
               )),
             ),
+          ),
+          Center(
+            child: Obx(()=>Text("${controller.state.counter.value}"))
           )
         ],
       ),
