@@ -1,4 +1,3 @@
-import 'package:booktickets/app_states/app_controller.dart';
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:booktickets/widgets/column_layout.dart';
@@ -6,11 +5,10 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
 
 import '../widgets/layout_builder_widget.dart';
 
-class ProfileScreen extends GetView<AppController> {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
@@ -31,7 +29,7 @@ class ProfileScreen extends GetView<AppController> {
                 width: AppLayout.getHeight(86),
                 decoration: BoxDecoration(
                     borderRadius:
-                        BorderRadius.circular(AppLayout.getHeight(10)),
+                    BorderRadius.circular(AppLayout.getHeight(10)),
                     image: const DecorationImage(
                         image: AssetImage("assets/images/img_1.png"))),
               ),
@@ -52,7 +50,7 @@ class ProfileScreen extends GetView<AppController> {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius:
-                          BorderRadius.circular(AppLayout.getHeight(100)),
+                      BorderRadius.circular(AppLayout.getHeight(100)),
                       color: const Color(0xFFFEF4F3),
                     ),
                     padding: EdgeInsets.symmetric(
@@ -109,7 +107,7 @@ class ProfileScreen extends GetView<AppController> {
                 decoration: BoxDecoration(
                     color: Styles.primaryColor,
                     borderRadius:
-                        BorderRadius.circular(AppLayout.getHeight(18))),
+                    BorderRadius.circular(AppLayout.getHeight(18))),
               ),
               Positioned(
                 top: -40,
@@ -259,13 +257,10 @@ class ProfileScreen extends GetView<AppController> {
             },
             child: Center(
               child: Text("How to get more miles?", style: Styles.textStyle.copyWith(
-                color: Styles.primaryColor,
-                fontWeight: FontWeight.w500
+                  color: Styles.primaryColor,
+                  fontWeight: FontWeight.w500
               )),
             ),
-          ),
-          Center(
-            child: Obx(()=>Text("${controller.state.counter.value}"))
           )
         ],
       ),
